@@ -1,0 +1,91 @@
+*{
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    box-sizing:border-box;
+}
+a{
+    text-decoration: none;
+    text-decoration-color: none;
+    text-decoration-line: none;
+}
+.form-control{
+    outline: none !important;
+    background-color: white;
+    box-shadow: none !important;
+}
+.form-control:focus,
+.form-control:active{
+    outline: none;
+    background-color: white;
+    box-shadow: none;
+}
+.nav-link .home_ic{
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'Roboto', sans-serif;
+}
+.nav-link{
+    border-radius: 50px;
+    font-size: 16px;
+    width: fit-content;
+    font-family: 'Roboto', sans-serif;
+}
+
+.nav-link:hover{
+    background-color: gainsboro;
+    color: black;
+    border-radius: 50px;
+    
+}
+.bubble{
+    border-radius: 50px;
+    font-size: 16px;
+    width: fit-content;
+}
+.bubble:hover{
+    background-color: gainsboro;
+    color: black;
+    border-radius: 50px; 
+}
+
+.icon-tray{
+    color: #1A8CD8;
+    text-align: center;
+    
+}
+.btn-close{
+    outline: none !important;
+    background-color: white;
+    box-shadow: none !important;
+}
+.btn-close:hover{
+    background-color: gainsboro;
+    border-radius: 50px;
+}
+.custom-tooltip {
+    background-color: gainsboro;
+}
+
+
+/* landing css */
+.hero{
+    background-image: url("/static/images/twitter_landing.png");
+    background-repeat:no-repeat;
+    background-size:cover;
+    position: relative;
+}
+.hero img{
+    position: absolute;
+    top: 30%;
+    left: 25%;
+}
+.land-bird{
+    margin-left: 190px;
+}
+
+.bm-nav{
+    display: inline-block;
+}
+

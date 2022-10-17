@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load humanize %}
+{% block main %}
+
+<nav class="navbar d-inline fixed-bottom navbar-expand-sm navbar-light bg-light d-block d-sm-none">
+    <div class="container">
+        <ul class="navbar-nav bm-nav">
+            <li class="nav-item bm-nav ">
+              <a class="nav-link mx-4" aria-current="page" href="{% url 'twitter-home' %}">
+                <img src="{% static 'images/home.svg'%}" alt="" style=" width: 40px; height:30px;">
+              </a>
+            </li>
+            <li class="nav-item bm-nav">
+              <a class="nav-link mx-4" href="{% url 'twitter-search' %}">
+                <img src="{% static 'images/search.svg'%}" alt="" style=" width: 40px; height:30px;">
+              </a>
+            </li>
+            <li class="nav-item bm-nav">
+              <a class="nav-link mx-2">Disabled</a>
+            </li>
+          </ul>
+    </div>
+  </nav>
+
+{% endblock %}

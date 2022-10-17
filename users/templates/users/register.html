@@ -1,0 +1,132 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Open Bootstrap Modal on Page Load</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function(){
+        $("#exampleModalToggle").modal('show');
+    });
+</script>
+</head>
+<body>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title border-0" id="exampleModalToggleLabel">Modal 1</h5>
+          <a href="{% url 'twitter-landing' %}"><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></a>
+        </div>
+        <div class="modal-body">
+          <form action="{% url 'register'%}" class="mt-1" method="POST">
+            {% csrf_token %}
+
+            <h2>Create your account</h2>
+   
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="name" placeholder="Enter name" name="name">
+              <label for="name">Name</label>
+            </div>
+   
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="email" placeholder="Enter email" name="email">
+              <label for="email">Email</label>
+            </div>
+
+            <div class="form-floating mb-3">
+              <input type="date" class="form-control" id="date" placeholder="Enter date" name="date">
+              <label for="date">Date</label>
+            </div>
+   
+         </form>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-dark" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Next</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade"  id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalToggleLabel2">Modal 2</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-5" >
+          <h2 class="mb-3">Customize your experience</h2>
+
+          <h5 class="mb-2">Track where you see Twitter content across the <br> web</h5>
+
+          <div class="row d-flex" style="font-size: small;">
+            <p class="col">Twitter uses this data to personalize your experience. This web browsing history will never be stored with your name, email, or phone number.</p>
+            <input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="...">
+          </div>
+
+          <div class="mb-5">
+            <p style="font-size: small;">
+              By signing up, you agree to our Terms, Privacy Policy, and Cookie Use. Twitter may use your contact information, including your email address and phone number for purposes outlined in our Privacy Policy. Learn more
+            </p>
+          </div>
+        </div>
+        <div class="modal-footer border-0">
+          <button class="btn btn-dark col-12 rounded-pill " data-bs-target="#exampleModalToggle3" data-bs-toggle="modal">Next</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="exampleModalToggle3" aria-hidden="true" aria-labelledby="exampleModalToggleLabel3" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalToggleLabel3">Modal 3</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Hide this modal and show the first with the button below.
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-dark" data-bs-target="#exampleModalToggle4" data-bs-toggle="modal">Next</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="exampleModalToggle4" aria-hidden="true" aria-labelledby="exampleModalToggleLabel4" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalToggleLabel4">Modal 4</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Hide this modal and show the first with the button below.
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-dark" data-bs-target="#exampleModalToggle5" data-bs-toggle="modal">Next</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="exampleModalToggle5" aria-hidden="true" aria-labelledby="exampleModalToggleLabel5" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalToggleLabel5">Modal 5</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Hide this modal and show the first with the button below.
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-dark">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load humanize %}
+{% load crispy_forms_tags %}
+{% block main %}
+
+<div class="col-md-12 col-lg-4 ">
+    <div class="col-12 d-flex justify-content-center mt-3">
+      <form method="get" action="{% url 'twitter-search' %}" class="col-10" role="search">
+        {% csrf_token %}
+        <input class="form-control me-2 bg-light rounded-pill" type="search submit" placeholder="Search Twitter" aria-label="Search" name="keyword">
+      </form>
+    </div>
+  </div>
+{% endblock %}
